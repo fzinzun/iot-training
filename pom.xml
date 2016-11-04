@@ -22,6 +22,8 @@
 		<module>09_data-storage</module>
 		
 		<module>11_queue</module>
+                <module>12_hello-word-sb</module>
+<module>13_accelerometer</module>
 		
 		<module>20_sensors</module>
 		
