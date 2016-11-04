@@ -18,12 +18,12 @@
 		<module>04_simple-rest</module>
 		
 		<module>07_virtual-sensor</module>
-		
+		<module>08_real-sensor</module>
+
 		<module>09_data-storage</module>
 		
 		<module>11_queue</module>
-                <module>12_hello-word-sb</module>
-<module>13_accelerometer</module>
+                <module>13_accelerometer</module>
 		
 		<module>20_sensors</module>
 		

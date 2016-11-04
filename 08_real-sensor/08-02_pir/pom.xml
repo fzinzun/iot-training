@@ -3,11 +3,11 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<artifactId>12_hello-word-sb</artifactId>
+	<artifactId>08-02_pir</artifactId>
 	<packaging>jar</packaging>
 
-	<name>12_sensor</name>
-	<description>Hello Word! whit springboot.</description>
+	<name>08-02_pir</name>
+	<description>PIR sensor project.</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -18,7 +18,7 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<java.version>1.7</java.version>
+		<java.version>1.8</java.version>
 	</properties>
 
 	<dependencies>
