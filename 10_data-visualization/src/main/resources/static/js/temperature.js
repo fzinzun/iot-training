@@ -6,10 +6,7 @@ $(function () {
 	chartTemperature = new Highcharts.Chart({
 	        chart: {
 	            renderTo: 'temperature-container',
-	            defaultSeriesType: 'spline',
-	            events: {
-	                load: getTemperature
-	            }
+	            defaultSeriesType: 'spline'
 	        },
 	        credits: {
 	            enabled: false
@@ -37,9 +34,6 @@ $(function () {
 	    });    
 });
 
-function getTemperature(){
-
-}
 
 /*
 * Gets Temperature from the server, add it to the graph and set a timeout 

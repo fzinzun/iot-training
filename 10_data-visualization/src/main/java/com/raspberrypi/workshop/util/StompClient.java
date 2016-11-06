@@ -89,18 +89,5 @@ public class StompClient {
         }
     }
     
-    /*public static void main(String[] args) throws Exception {
-        HelloClient helloClient = new HelloClient();
-
-        ListenableFuture<StompSession> f = helloClient.connect();
-        StompSession stompSession = f.get();
-
-        logger.info("Subscribing to greeting topic using session " + stompSession);
-        helloClient.subscribeGreetings(stompSession);
-
-        logger.info("Sending hello message" + stompSession);
-        helloClient.sendHello(stompSession);
-        Thread.sleep(60000);
-    }*/
-    
+   
 }

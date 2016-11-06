@@ -6,10 +6,7 @@ $(function () {
 
         chart: {
             type: 'solidgauge',
-            marginTop: 50,
-            events: {
-                load: getEncoder
-            }
+            marginTop: 50
         },
         credits: {
             enabled: false
@@ -152,8 +149,6 @@ $(function () {
 });
 
 
-function getEncoder(){
-}
 function processEncoder(reading){
    point = chartEncoder.series[0].points[0];
    point.update(parseFloat(reading));    	   

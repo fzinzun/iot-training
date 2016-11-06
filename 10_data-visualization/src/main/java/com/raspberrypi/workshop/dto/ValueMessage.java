@@ -4,7 +4,6 @@ public class ValueMessage {
 
 	private String id;
 	private String type;
-
     private Object value;
 
     public ValueMessage() {

@@ -63,6 +63,10 @@ public class VisualizationController {
 	
 	@RequestMapping (value="/sendPir")
 	public ValueMessage sendPir() throws InterruptedException, ExecutionException{
+		return sendPirMessage();
+	}
+
+	private ValueMessage sendPirMessage() throws InterruptedException, ExecutionException {
 		log.info("Send PIR message");
 		ipr = !ipr;
 
@@ -73,11 +77,6 @@ public class VisualizationController {
 	
 	
 	
-	 /*@MessageMapping("/hello")
-	 @SendTo("/topic/greetings")
-	 public ValueMessage greeting(HelloMessage message) {
-		 System.out.println("greeting");
-	      return new ValueMessage("","","Hello, " + message.getName() + "!");
-	}*/
+	
 
 }

@@ -34,8 +34,6 @@ function processMessage(message) {
 
 
 
-
-
 $(function () {
     //Auto-connect
     connect();
