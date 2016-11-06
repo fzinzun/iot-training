@@ -30,9 +30,9 @@ public class RabbitConfig {
 	public Channel channel;
     
      
-    String hostName = "3.51.54.58";
-    String userName = "npss";
-    String pass = "npss";
+    String hostName = "192.168.0.10";
+    String userName = "user";
+    String pass = "pass";
     int port = 5672;
     
     public static String EXCHANGE_NAME = "simple.exchange";

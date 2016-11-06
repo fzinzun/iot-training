@@ -27,28 +27,8 @@ public class DemoApplication {
 		SpringApplication.run(DemoApplication.class, args);
 	}
 	
-	@PostConstruct
-    public void init() throws IOException{
-		
-		String queueName = rabbit.channel.queueDeclare().getQueue();
-		rabbit.channel.queueBind(queueName, rabbit.EXCHANGE_NAME, "");
-
-		
-		Consumer consumer = new DefaultConsumer(rabbit.channel) {
-		  @Override
-		  public void handleDelivery(String consumerTag, Envelope envelope,
-		                             AMQP.BasicProperties properties, byte[] body) throws IOException {
-		    String message = new String(body, "UTF-8");
-		    System.out.println(" [x] Received '" + message + "'");
-		  }
-		};
-		rabbit.channel.basicConsume(queueName, true, consumer);
-    }
-	
-	
 	@RequestMapping(value = "/send", method = RequestMethod.GET , produces="application/json; charset=UTF-8")
-    public double getValue() throws IOException, InterruptedException{
-		rabbit.sendMessage("Team1", 1.0);
-    	return 10;
+    public void getValue() throws IOException, InterruptedException{
+		rabbit.sendMessage("100","pir", "true");
     }
 }
