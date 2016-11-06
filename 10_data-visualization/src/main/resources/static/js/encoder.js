@@ -153,14 +153,8 @@ $(function () {
 
 
 function getEncoder(){
-	   $.ajax({
-	       url: '/getEncoder',
-	       success: function(reading) {
-
-	    	   point = chartEncoder.series[0].points[0];
-	    	   point.update(reading.value);
-	    	   setTimeout(getEncoder, 1000); 
-	       },
-	       cache: false
-	   });	
+}
+function processEncoder(reading){
+   point = chartEncoder.series[0].points[0];
+   point.update(parseFloat(reading));    	   
 }

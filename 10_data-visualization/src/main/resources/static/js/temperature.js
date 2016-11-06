@@ -37,25 +37,22 @@ $(function () {
 	    });    
 });
 
+function getTemperature(){
+
+}
+
 /*
 * Gets Temperature from the server, add it to the graph and set a timeout 
 * to request again
 */
-function getTemperature() {
-   $.ajax({
-       url: '/getTemperature',
-       success: function(reading) {
+function processTemperature(reading) {
+   
+   var series = chartTemperature.series[0],
+   shift = series.data.length > 20; // shift if the series is 
 
-           var series = chartTemperature.series[0],
-               shift = series.data.length > 20; // shift if the series is 
-                                                // longer than 20
-
-           // add the point
-           chartTemperature.series[0].addPoint(reading.point, true, shift);
-           
-           // call it again after one second
-           setTimeout(getTemperature, 1000);    
-       },
-       cache: false
-   });
+   // add the point
+   chartTemperature.series[0].addPoint(JSON.parse(reading), true, shift);
 }
+
+
+
