@@ -50,16 +50,37 @@
     <div class="container">
     	<hr class="featurette-divider">
     	
-    <div class="row featurette">
-        <div class="col-md-7">
-        	<div id="temperature-container" ></div>  
-		</div>
-        <div class="col-md-5">
-			<div id="encoder-container" ></div>  
-		</div>
-    </div>
-    	
-    	
+	    <div class="row featurette">
+	        <div class="col-md-7">
+	        	<div id="temperature-container" ></div>  
+			</div>
+	        <div class="col-md-5">
+				<div id="encoder-container" ></div>  
+			</div>
+	    </div>
+	    
+	    <hr />	
+	    
+	    <div class="row featurette">
+	    	<div class="col-md-1"></div>
+	        <div class="col-md-3">
+	        	<div id="humidity-container-false" >
+	        		<img src="images/rain_false.png" class="image-toggle" style="max-width: 100%;max-height: 200px;" />
+	        	</div>  
+	        	<div id="humidity-container-true" >
+	        		<img src="images/rain_true.png" class="image-toggle" style="max-width: 100%;max-height: 200px;" />
+	        	</div>  
+			</div>
+			<div class="col-md-1"></div>
+	        <div class="col-md-3">
+				<div id="ipr-container-false" >
+	        		<img src="images/walk_false.png" class="image-toggle" style="max-width: 100%;max-height: 200px;" />
+	        	</div>  
+	        	<div id="ipr-container-true" >
+	        		<img src="images/walk_true.png" class="image-toggle" style="max-width: 100%;max-height: 200px;" />
+	        	</div>  
+			</div>
+	    </div>
     	
     	
 	    
@@ -77,5 +98,6 @@
     
     <script src="js/temperature.js"></script>
     <script src="js/encoder.js"></script>
+    <script src="js/humidity-and-ipr.js"></script>
   </body>
 </html>

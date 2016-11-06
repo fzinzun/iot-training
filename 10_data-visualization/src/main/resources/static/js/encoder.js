@@ -11,9 +11,11 @@ $(function () {
                 load: getEncoder
             }
         },
-
+        credits: {
+            enabled: false
+        },
         title: {
-            text: 'Activity',
+            text: 'Encoder sensor',
             style: {
                 fontSize: '24px'
             }
@@ -155,19 +157,8 @@ function getEncoder(){
 	       url: '/getEncoder',
 	       success: function(reading) {
 
-	           //var series = chartEncoder.series[0];
-	           //    shift = series.data.length > 20; // shift if the series is 
-	                                                // longer than 20
-	    	   console.log(chartEncoder.series[0].data[0].y);
-	    	   
 	    	   point = chartEncoder.series[0].points[0];
-	    	   
 	    	   point.update(reading.value);
-	           // add the point
-	           //    chartTemperature.series[0].addPoint(reading.point, true, shift);
-	    	   console.log(chartEncoder.series[0].data[0].y);
-	           
-	           // call it again after one second
 	    	   setTimeout(getEncoder, 1000); 
 	       },
 	       cache: false

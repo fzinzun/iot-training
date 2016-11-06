@@ -38,4 +38,21 @@ public class VisualizationController {
 				
 		return encoderDto;
 	}
+	
+	private static boolean humidity = false;
+	private static boolean ipr = true;
+	
+	@RequestMapping (value="/getHumidity")
+	public boolean getHumidity(){
+		humidity = !humidity;
+		return humidity;
+	}
+	
+	@RequestMapping (value="/getIpr")
+	public boolean getIpr(){
+		ipr = !ipr;
+		return ipr;
+	}
+	
+	
 }

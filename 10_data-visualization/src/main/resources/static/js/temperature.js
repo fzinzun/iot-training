@@ -11,6 +11,9 @@ $(function () {
 	                load: getTemperature
 	            }
 	        },
+	        credits: {
+	            enabled: false
+	        },
 	        title: {
 	            text: 'Live Ambient Temperature'
 	        },
@@ -48,7 +51,7 @@ function getTemperature() {
                                                 // longer than 20
 
            // add the point
-               chartTemperature.series[0].addPoint(reading.point, true, shift);
+           chartTemperature.series[0].addPoint(reading.point, true, shift);
            
            // call it again after one second
            setTimeout(getTemperature, 1000);    
