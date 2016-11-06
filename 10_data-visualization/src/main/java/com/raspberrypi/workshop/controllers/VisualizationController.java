@@ -48,7 +48,7 @@ public class VisualizationController {
 	}
 	
 	private static boolean humidity = false;
-	private static boolean ipr = true;
+	private static boolean ipr = false;
 	
 	@RequestMapping (value="/sendHumidity")
 	public ValueMessage sendHumidity() throws InterruptedException, ExecutionException{
