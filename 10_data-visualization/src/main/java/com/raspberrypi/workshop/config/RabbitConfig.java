@@ -1,28 +1,14 @@
-package com.raspberrypi.workshop;
+package com.raspberrypi.workshop.config;
 
 import java.io.IOException;
-import java.nio.charset.StandardCharsets;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.UUID;
 
 import javax.annotation.PostConstruct;
 
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
-
-import com.rabbitmq.client.AMQP;
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;
 import com.rabbitmq.client.ConnectionFactory;
-import com.rabbitmq.client.Consumer;
-import com.rabbitmq.client.DefaultConsumer;
-import com.rabbitmq.client.Envelope;
 
 @Component
 public class RabbitConfig {
@@ -30,10 +16,10 @@ public class RabbitConfig {
 	public Channel channel;
     
      
-    String hostName = "localhost";
-    String userName = "guest";
-    String pass = "guest";
-    int port = 32773;
+    String hostName = "192.168.0.10";
+    String userName = "user";
+    String pass = "pass";
+    int port = 5672;
     
     public static String EXCHANGE_NAME = "simple.exchange";
     
@@ -54,11 +40,11 @@ public class RabbitConfig {
 		}
     }
     
-	protected boolean sendMessage(String id, String type, String value) throws IOException, InterruptedException {
-		//final String corrId = UUID.randomUUID().toString();
+	protected boolean sendMessage(String teamName,double value) throws IOException, InterruptedException {
+		final String corrId = UUID.randomUUID().toString();
 
 		byte[] body;
-		body = ("{\"id\":\"" + id + "\", \"type\":\"" + type + "\", \"value\":\"" + value + "\"}").getBytes();
+		body = ("Id:"+corrId+" TeamName:" + teamName + " Value:" + value).getBytes();
 
 		synchronized (this) {
 			this.channel.basicPublish(EXCHANGE_NAME,"",null, body);

@@ -1,6 +1,7 @@
 package com.raspberrypi.workshop;
 
 import java.io.IOException;
+import java.util.Calendar;
 
 import javax.annotation.PostConstruct;
 
@@ -29,6 +30,16 @@ public class DemoApplication {
 	
 	@RequestMapping(value = "/send", method = RequestMethod.GET , produces="application/json; charset=UTF-8")
     public void getValue() throws IOException, InterruptedException{
+		
+		Calendar cal = Calendar.getInstance();
+		double rand = Math.random();
+		long now = cal.getTime().getTime() * 1000;
+		
+		
+		rabbit.sendMessage("003","temperature",""+rand);
 		rabbit.sendMessage("100","pir", "true");
+		rabbit.sendMessage("100","encoder", ""+(rand*100));
+		rabbit.sendMessage("100","humidity", "true");
+		
     }
 }
