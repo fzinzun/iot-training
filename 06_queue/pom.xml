@@ -12,8 +12,8 @@
 	<description>Workshop projects</description>
 	
 	<modules>
-		<module>1_producer</module>
-		<module>2_consumer</module>
+		<module>06_1_producer</module>
+		<module>06_2_consumer</module>
 	</modules>
 
 	<properties>
