@@ -2,6 +2,7 @@ package com.raspberrypi.workshop;
 
 import javax.annotation.PostConstruct;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -23,9 +24,9 @@ import com.pi4j.io.gpio.event.GpioPinListenerDigital;
 @RestController
 public class DemoApplication implements GpioPinListenerDigital {
 	
-	@Value("${myProperty}")
-	private int myProperty;
-	
+	@Autowired
+	RabbitConfig rabbit;
+
 	private int value = 0;
 	
 
@@ -63,6 +64,8 @@ public class DemoApplication implements GpioPinListenerDigital {
         }else{
         	value = 1;
         }
+        
+        rabbit.sendMessage("003","pir",""+value);
     }
     
 }

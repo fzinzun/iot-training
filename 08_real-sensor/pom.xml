@@ -4,12 +4,18 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<artifactId>08_real-sensor</artifactId>
-	<version>0.1</version>
-	<packaging>pom</packaging>
-
 	<name>08_real-sensor</name>
-	<description>Workshop projects for real sensors</description>
+	<description>Real Queue sensor.</description>
+
 	
+	
+	
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>1.4.1.RELEASE</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -17,9 +23,70 @@
 		<java.version>1.8</java.version>
 	</properties>
 
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-cloud-connectors</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-stream-rabbit</artifactId>
+		</dependency>
+		<!-- Spring Boot -->
+		<dependency>
+		  <groupId>org.springframework.boot</groupId>
+		  <artifactId>spring-boot-starter-amqp</artifactId>
+		</dependency>
 
-	<modules>
-		<module>08-01_humidity</module>
-		<module>08-02_pir</module>
-	</modules>
+		    <!-- RabbitMQ -->
+		<dependency>
+		  <groupId>com.rabbitmq</groupId>
+		  <artifactId>amqp-client</artifactId>
+		  <version>3.5.2</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		
+		<dependency>
+		    <groupId>com.pi4j</groupId>
+		    <artifactId>pi4j-core</artifactId>
+		   <version>1.1</version>
+		</dependency>
+	</dependencies>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-dependencies</artifactId>
+				<version>Camden.RELEASE</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+	
+	
+	
+		
+		
+	
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+	
+
 </project>

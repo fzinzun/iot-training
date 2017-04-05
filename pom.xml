@@ -19,9 +19,8 @@
 		<module>05_raspberrypi-gpio</module>
 		<module>06_queue</module>
 		<module>07_virtual-sensor</module>
-		
-		<!--module>08_real-sensor</module>
-		<module>09_data-storage</module>
+		<module>08_real-sensor</module>
+		<!--module>09_data-storage</module>
 		<module>10_data-visualization</module>
 		
 		<module>11_queue</module>
