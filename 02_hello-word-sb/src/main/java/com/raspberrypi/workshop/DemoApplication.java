@@ -17,8 +17,8 @@ public class DemoApplication implements CommandLineRunner{
 
 	@Override
 	public void run(String... arg0) throws Exception {
-		System.out.println("Hello Word!!! myProperty: " + myProperty );
-		//System.out.println("Hello Word!!!" + arg0[0] + " myProperty" + myProperty );
+		System.out.println("Hello Word!!! ");
+		System.out.println("myProperty: " + myProperty);
 	}
 	
 }
