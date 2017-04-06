@@ -1,0 +1,34 @@
+<link rel="import" href="../polymer/polymer.html">
+
+<!--
+`Simple-Component`
+This is a simple hello world component
+
+@demo demo/index.html 
+-->
+
+<dom-module id="Simple-Component">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+    <h2>Hello!!! [[prop1]]</h2>
+  </template>
+
+  <script>
+    Polymer({
+
+      is: 'Simple-Component',
+
+      properties: {
+        prop1: {
+          type: String,
+          value: '  Simple-Component',
+        },
+      },
+
+    });
+  </script>
+</dom-module>
