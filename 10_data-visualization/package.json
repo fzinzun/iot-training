@@ -1,0 +1,14 @@
+{
+  "name": "10_data-visualization",
+  "version": "1.0.0",
+  "description": "Raspberry PI Workshop",
+  "main": "index.html",
+  "scripts": {
+	"server": "http-server"
+  },
+  "author": "Francisco Zinzun",
+  "license": "ISC",
+  "dependencies": {
+    "http-server": "^0.9.0"
+  }
+}

@@ -1,5 +1,7 @@
 package com.raspberrypi.workshop;
 
+import java.io.IOException;
+
 import javax.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -65,7 +67,15 @@ public class DemoApplication implements GpioPinListenerDigital {
         	value = 1;
         }
         
-        rabbit.sendMessage("003","pir",""+value);
+        try {
+			rabbit.sendMessage("003","pir",""+value);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
     }
     
 }
