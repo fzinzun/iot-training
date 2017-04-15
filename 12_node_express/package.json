@@ -1,0 +1,14 @@
+{
+  "name": "polymer",
+  "version": "0.0.1",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ricardo Uribe",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.15.2"
+  }
+}
