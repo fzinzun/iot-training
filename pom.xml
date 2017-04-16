@@ -24,9 +24,9 @@
 		<module>10_data-visualization</module>
 		
 		<module>11_queue</module>
-                <module>13_accelerometer</module>
+        <module>13_accelerometer</module>-->
 		
-		<module>20_sensors</module-->
+		<module>20_actuator</module>
 		
 		
 	</modules>
