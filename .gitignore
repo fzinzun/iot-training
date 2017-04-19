@@ -16,6 +16,6 @@ target
 .settings
 .settings
 */node_modules
-*/public/bower_components
+*/bower_components
 *.iml
 .idea/*

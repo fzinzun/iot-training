@@ -9,6 +9,7 @@
   "author": "Ricardo Uribe",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.15.2"
+    "express": "^4.15.2",
+    "stompjs": "^2.3.3"
   }
 }
