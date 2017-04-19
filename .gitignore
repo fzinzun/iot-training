@@ -14,8 +14,7 @@ target
 *.project
 *.classpath
 .settings
-.settings
-*/node_modules
 */bower_components
+*/node_modules
 *.iml
 .idea/*
