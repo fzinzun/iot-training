@@ -1,0 +1,44 @@
+<link rel="import" href="../polymer/polymer.html">
+<script src="node_modules/stompjs/lib/stomp.js"></script>
+
+<!--
+`Read-Data`
+This element is going to connect to a web socket and retrieve data from it.
+
+@demo demo/index.html 
+-->
+
+<dom-module id="Read-Data">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+    <h2>Fetch Data from [[webSocketUrl]]</h2>
+  </template>
+
+  <script>
+    Polymer({
+
+      is: 'Read-Data',
+
+      properties: {
+        webSocketUrl: {
+          type: String,
+          value: 'ws://192.168.1.70:15674',
+        },
+        webSocketUser:{
+          type: String,
+          value: 'guest',
+        },
+        webSocketPassword:{
+          type: String,
+          value: 'guest',
+        },
+
+      },
+
+    });
+  </script>
+</dom-module>

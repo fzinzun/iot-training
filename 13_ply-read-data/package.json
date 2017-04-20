@@ -1,0 +1,15 @@
+{
+  "name": "Read-Data",
+  "version": "0.0.1",
+  "description": "",
+  "main": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Hugo Rangel",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.15.2",
+    "stompjs": "^2.3.3"
+  }
+}
