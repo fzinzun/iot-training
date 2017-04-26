@@ -1,0 +1,66 @@
+<link rel="import" href="../polymer/polymer.html">
+
+<!--
+`Data-Client`
+This element is going to display data depending on the type configured
+
+@demo demo/index.html 
+-->
+
+<dom-module id="Data-Client">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+
+      .isOn{
+        color: green;
+      }
+
+      .isOff{
+        color: red;
+      }
+    </style>
+    <h2>Reading sensor: [[registeredType]]</h2>
+    <iron-icon icon="lightbulb-outline" id="ironIcon{{registeredType}}" class="isOff" ></iron-icon>
+  </template>
+
+  <script>
+    Polymer({
+
+      is: 'Data-Client',
+
+      properties: {
+        registeredType: {
+          type: String,
+          value: '',
+        },
+        data:{
+          type: Object,
+          value: function(){
+            return {};
+          },
+          observer: '_updatedChild',
+          notify: true,
+        },        
+      },
+
+      _updatedChild: function( aData ){        
+        
+        console.log("**DATA!!");
+        console.log(aData);
+        if ( aData !== null && typeof aData !== 'undefined' ){
+          let lIcon = this.$$('#ironIcon' + this.registeredType);
+          if (aData.type === this.registeredType)
+          {
+            let lValue = aData.value === 'true';
+            this.toggleClass('isOff', !lValue , lIcon);
+            this.toggleClass('isOn', lValue, lIcon);            
+          }
+        }
+      },
+
+    });
+  </script>
+</dom-module>

@@ -2,6 +2,6 @@
 	"scripts": {
 		"dev": "polymer serve & npm run watch",
 		"test": "polymer test",
-		"watch": "browser-sync start --proxy localhost:8080 --files 'src/*.html, src/*.js, images/*' "
+		"watch": "browser-sync start --proxy localhost:8080 --files 'demo/*.*,images/*' "
 	}
 }

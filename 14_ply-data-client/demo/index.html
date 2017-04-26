@@ -4,25 +4,24 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
 
-    <title>Read-Data demo</title>
+    <title>Data-Client demo</title>
 
     <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
 
     <link rel="import" href="../../iron-demo-helpers/demo-pages-shared-styles.html">
     <link rel="import" href="../../iron-demo-helpers/demo-snippet.html">
-    <link rel="import" href="../Read-Data.html">
+    <link rel="import" href="../Data-Client.html">
 
     <style is="custom-style" include="demo-pages-shared-styles">
     </style>
   </head>
   <body>
     <div class="vertical-section-container centered">
-      <h3>Basic Read-Data demo</h3>
+      <h3>Basic Data-Client demo</h3>
       <demo-snippet>
         <template>
-          <Read-Data web-socket-url="ws://192.168.1.70:15674/ws"
-                     web-socket-user="guest"
-                     web-socket-password="guest"></Read-Data>
+          <Data-Client registered-type="pir"
+          data='{"id":"005", "type":"pir", "value":"true"}'></Data-Client>
         </template>
       </demo-snippet>
     </div>

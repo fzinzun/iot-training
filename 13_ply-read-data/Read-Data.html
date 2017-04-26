@@ -1,4 +1,6 @@
 <link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../paper-input/paper-input.html">
+<link rel="import" href="../paper-input/paper-textarea.html">
 <script src="node_modules/stompjs/lib/stomp.js"></script>
 
 <!--
@@ -15,7 +17,27 @@ This element is going to connect to a web socket and retrieve data from it.
         display: block;
       }
     </style>
-    <h2>Fetch Data from [[webSocketUrl]]</h2>
+
+    <template is="dom-if" if="{{showDebug}}">
+
+      <h2>Fetch Data</h2>
+
+      <paper-input label="Web Socket" value="{{webSocketUrl}}">
+        <iron-icon icon="dns" prefix></iron-icon>
+      </paper-input>
+      <paper-input label="User" value="{{webSocketUser}}">
+        <iron-icon icon="perm-identity" prefix></iron-icon>
+      </paper-input>
+      <paper-input label="Password" value="{{webSocketPassword}}">
+        <iron-icon icon="lock" prefix></iron-icon>
+      </paper-input>
+      <paper-textarea label="Stomp"></paper-textarea>
+
+    </template>
+
+    <content id="embeddedContent" />
+
+
   </template>
 
   <script>
@@ -26,19 +48,69 @@ This element is going to connect to a web socket and retrieve data from it.
       properties: {
         webSocketUrl: {
           type: String,
-          value: 'ws://192.168.1.70:15674',
         },
         webSocketUser:{
           type: String,
-          value: 'guest',
         },
         webSocketPassword:{
           type: String,
-          value: 'guest',
         },
+        _webSocketData:{
+          type: Object,
+          value: function(){
+            return {};
+          },
+          observer: '_updatedData',
+          notify: true,
+        },
+        showDebug:{
+          type: Boolean,
+          value: true
+        },
+        autoConnect:{
+          type: Boolean,
+          value: true
+        },
+      },     
+
+      _updatedData: function( aSocketData ){
+        
+        var lContents = this.$.embeddedContent.getDistributedNodes();
+        console.log("The contents are!!!:");
+        console.log(lContents);
+        if (lContents.length > 0)
+        {
+          for (let lCycle = 0; lCycle < lContents.length; lCycle++){
+            lContents[lCycle].data = aSocketData;
+          }
+        }
+
 
       },
 
+      attached: function() {
+
+        if (this.webSocketUrl !== '' && this.webSocketUser !== '' && this.webSocketPassword !== ''){
+            
+            console.log("there is enough information to start the connection...");
+            //we are goig to create a Stopm client
+            var lDestination = "/exchange/simple.exchange";
+            var lStompClient = Stomp.client(this.webSocketUrl);
+
+            //we are going to try to connect now
+            var that = this;
+            lStompClient.connect(this.webSocketUser, this.webSocketPassword, function(aFrame){
+              lStompClient.debug("Connected to Stomp!");
+              lStompClient.subscribe(lDestination, function(aMessage) {                
+                //we want to convert the message of the body                    
+                that._webSocketData = JSON.parse(aMessage.body);
+                console.log("****WEB SOCKET DATA: ");
+                console.log(that._webSocketData);
+                //lStompClient.debug(message);
+              });
+            });            
+        }        
+      },
     });
   </script>
 </dom-module>

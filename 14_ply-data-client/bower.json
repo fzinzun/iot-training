@@ -1,11 +1,10 @@
 {
-  "name": "Read-Data",
-  "description": "This element is going to connect to a web socket and retrieve data from it.",
-  "main": "Read-Data.html",
+  "name": "Data-Client",
+  "description": "This element is going to display data depending on the type configured",
+  "main": "Data-Client.html",
   "dependencies": {
     "polymer": "Polymer/polymer#^1.4.0",
-    "paper-input": "^1.1.24",
-    "iron-icon": "^1.0.13"
+    "iron-icons": "^1.2.1"
   },
   "devDependencies": {
     "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",
