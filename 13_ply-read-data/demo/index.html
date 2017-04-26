@@ -10,6 +10,7 @@
 
     <link rel="import" href="../../iron-demo-helpers/demo-pages-shared-styles.html">
     <link rel="import" href="../../iron-demo-helpers/demo-snippet.html">
+    <link rel="import" href="../../Data-Client/Data-Client.html">
     <link rel="import" href="../Read-Data.html">
 
     <style is="custom-style" include="demo-pages-shared-styles">
@@ -22,7 +23,11 @@
         <template>
           <Read-Data web-socket-url="ws://192.168.1.70:15674/ws"
                      web-socket-user="guest"
-                     web-socket-password="guest"></Read-Data>
+                     web-socket-password="guest"
+                     >
+             <Data-Client registered-type="pir"></Data-Client>
+          </Read-Data>
+          
         </template>
       </demo-snippet>
     </div>

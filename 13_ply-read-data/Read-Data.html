@@ -64,8 +64,7 @@ This element is going to connect to a web socket and retrieve data from it.
           notify: true,
         },
         showDebug:{
-          type: Boolean,
-          value: true
+          type: Boolean          
         },
         autoConnect:{
           type: Boolean,
@@ -75,13 +74,18 @@ This element is going to connect to a web socket and retrieve data from it.
 
       _updatedData: function( aSocketData ){
         
-        var lContents = this.$.embeddedContent.getDistributedNodes();
+        var lContents = this.children;
         console.log("The contents are!!!:");
         console.log(lContents);
         if (lContents.length > 0)
         {
           for (let lCycle = 0; lCycle < lContents.length; lCycle++){
-            lContents[lCycle].data = aSocketData;
+            //for every children that has a propety named data, we are going to
+            //pass the value of the socket data
+            if (typeof lContents[lCycle].data === 'object' && 
+                typeof lContents[lCycle].registeredType !== 'undefined'){
+              lContents[lCycle].data = aSocketData;
+            }
           }
         }
 

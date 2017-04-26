@@ -5,7 +5,8 @@
   "dependencies": {
     "polymer": "Polymer/polymer#^1.4.0",
     "paper-input": "^1.1.24",
-    "iron-icon": "^1.0.13"
+    "iron-icon": "^1.0.13",
+    "Data-Client": "https://github.com/hugorangel/Data-Client.git"
   },
   "devDependencies": {
     "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",
