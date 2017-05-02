@@ -63,6 +63,21 @@ public class AppPrincipalFrame extends JFrame {
 		});
 		
 		btnSensor_2 = new JButton("Sensor 4");
+		btnSensor_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				double rand = Math.random();
+				
+				try {
+					rabbit.sendMessage("005","temperature",""+rand);
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				} catch (InterruptedException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+			}
+		});
 		
 		btnSensor = new JButton("Sensor 2");
 		btnSensor.addActionListener(new ActionListener() {
@@ -82,10 +97,52 @@ public class AppPrincipalFrame extends JFrame {
 		});
 		
 		btnSensor_3 = new JButton("Sensor 5");
+		btnSensor_3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				try {
+					pirValue = !pirValue;
+					rabbit.sendMessage("005","pir",""+pirValue);
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				} catch (InterruptedException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+			}
+		});
 		
 		btnSensor_1 = new JButton("Sensor 3");
+		btnSensor_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				try {
+					pirValue = !pirValue;
+					rabbit.sendMessage("005","pir",""+pirValue);
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				} catch (InterruptedException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+			}
+		});
 		
 		btnSensor_4 = new JButton("Sensor 6");
+		btnSensor_4.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				try {
+					pirValue = !pirValue;
+					rabbit.sendMessage("005","pir",""+pirValue);
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				} catch (InterruptedException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+			}
+		});
 		GroupLayout gl_panel = new GroupLayout(panel);
 		gl_panel.setHorizontalGroup(
 			gl_panel.createParallelGroup(Alignment.LEADING)
