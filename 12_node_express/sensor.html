@@ -1,16 +1,22 @@
 <html>
     <head>
         <link rel="stylesheet" href="css/styles.css">
-        <script src="bower_components/webcomponentsjs/webcomponents.js"></script>
+        <script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
         <script src="node_modules/stompjs/lib/stomp.js"></script>
-        <script src="queue.js"></script>
+        <script src="queue2.js"></script>
+        <link rel="import" href="bower_components/paper-toast/paper-toast.html"></script>
+
     </head>
     <body>
-        Sensor Messages
+
+
+        <h1>Panel de Control</h1>
 
         <div id="messages" style="font-size:80%">
         </div>
+
+        <paper-toast class="defaultToast" text="Hola Mundo!" opened></paper-toast>
 
     </body>
 </html>

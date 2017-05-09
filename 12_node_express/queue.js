@@ -16,6 +16,22 @@
         client.debug("connected to Stomp");
         client.subscribe(destination, function(message) {
           $("#messages").append("<p>" + message.body + "</p>\n");
+          var toasts = document.getElementById('toasts');
+          var properties = {
+              duration: 3000,
+              actionText: '',
+              showCancel: true,
+              disableSwipe: false,
+              fitBottom: true,
+              onAction: function() { feedback2.innerText = "onAction()"; },
+              onCancel: function() { feedback2.innerText = "onCancel()"; }
+
+          }
+
+          var timerID = setInterval(function() {
+              toasts.showSuccessToast(message.body, properties);
+          }, 60 * 1000);
+
         });
       });
 

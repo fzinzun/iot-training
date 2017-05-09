@@ -17,6 +17,8 @@
   ],
   "dependencies": {
     "polymer": "Polymer/polymer#^1.0.0",
-    "google-map": "GoogleWebComponents/google-map#^1.2.0"
+    "google-map": "GoogleWebComponents/google-map#^1.2.0",
+    "app-toasts": "^0.3.2",
+    "paper-toast": "^1.3.1"
   }
 }
