@@ -3,7 +3,7 @@
  $(document).ready(function() {
   if(window.WebSocket) {
     var client, destination;
-    var url = "ws://192.168.1.73:15674/ws";
+    var url = "ws://172.16.8.86:15674/ws";
     var login = "guest";
     var passcode = "guest";
 
