@@ -1,0 +1,51 @@
+<link rel="import" href="../polymer/polymer-element.html">
+<link rel="import" href="../paper-input/paper-input.html">
+<link rel="import" href="../iron-icon/iron-icon.html">
+<link rel="import" href="../paper-button/paper-button.html">
+<dom-module id="registration-form">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+    <h2>Hello [[prop1]]!</h2>    
+    <iron-icon icon="menu"></iron-icon>    
+    <paper-input label="username">
+      <iron-icon icon="mail" slot="prefix"></iron-icon>
+      <div slot="suffix">@email.com</div>
+    </paper-input>
+    <paper-button raised on-click="sayHello">ClickMe!</paper-button>
+  </template>
+
+  <script>
+    /**
+     * `registration-form`
+     * this element is going to handle registration  of users
+     *
+     * @customElement
+     * @polymer
+     * @demo demo/index.html
+     */
+    class RegistrationForm extends Polymer.Element {
+      static get is() { return 'registration-form'; }
+      static get properties() {
+        return {
+          prop1: {
+            type: String,
+            value: 'registration-formss'
+          },
+          observers:[
+            //Todo!
+          ]
+        };
+      }
+
+      sayHello(){
+        alert("hey!");
+      }
+    }
+
+    window.customElements.define(RegistrationForm.is, RegistrationForm);
+  </script>
+</dom-module>
