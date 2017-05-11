@@ -1,10 +1,10 @@
 var express = require('express');
-var Stomp = require('stompjs');
+//var Stomp = require('stompjs');
 var app = express();
 
 app.use(express.static(__dirname + '/'));
 
-
+/*
 // Use raw TCP sockets
 var client = Stomp.overWS('ws://192.168.1.72:15674/ws');
 // uncomment to print out the STOMP frames
@@ -22,7 +22,7 @@ client.connect('admin', 'admin', function(frame) {
   //console.log ('sending a message');
   //client.send('/queue/myqueue', {}, 'Hello, node.js!');
 });
-
+*/
 
 // Render index.html on the main page, specify the root
 app.get('/', function(req, res){
